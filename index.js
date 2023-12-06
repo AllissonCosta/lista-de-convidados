@@ -3,7 +3,8 @@ const mensagem = document.getElementById("mensagem");
 const enviar = document.getElementById("enviar");
 const verConvite = document.getElementById("ver-convite");
 
-const nomesPermitidos = ["admin","usuario","teste"]; // nomes permitidos
+const nomesPermitidos = ["admin","teste"]; // nomes permitidos
+const nomesNaoPermitidos = ['usuario']; // nomes especificos não permitidos
 
 enviar.addEventListener("click", () => {
   // recupera o valor do input "nome"
@@ -16,8 +17,10 @@ enviar.addEventListener("click", () => {
   const verConvite = document.getElementById("ver-convite");
   verConvite.style.display = "none";
 
-  // verifica se o nome está na lista
+  // verifica se o nome está na lista dos convidados
   const estaConvidado = nomesPermitidos.includes(valor);
+  // verifica se o nome está na lista de não permitidos
+  const naoPermitidos = nomesNaoPermitidos.includes(valor);
 
   if (estaConvidado) {
     mensagem.innerHTML = "Você foi convidado";
@@ -30,6 +33,8 @@ enviar.addEventListener("click", () => {
       // abre a página com a imagem
       window.open("./convite.html");
     });
+  } else if (naoPermitidos) {
+    mensagem.innerHTML = "Você não foi permitido!"
   } else {
     mensagem.innerHTML = "Você não foi convidado";
   }
