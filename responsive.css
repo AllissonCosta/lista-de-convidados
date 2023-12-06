@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1000px) {
+                 /* página do index */
+    header {
+        margin-top: 10vh;
+    }
+    h1 {
+        font-size: 25px;
+      }
+      h2 {
+        margin-top: -15px;
+        margin-bottom: 30px;
+        font-size: 15px;
+      }
+
+
+
+              /* página de convite */
+  .bg-display {
+   opacity: .2;
+}
+
+.convite_img {
+  max-width: 500px;
+}
+
+  p {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+}
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+
+/* página de convite */
+
+
+.convite_img {
+max-width: 400px;
+}
+
+}
+
